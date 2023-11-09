@@ -1,0 +1,66 @@
+public class Estoque {
+    private String nome;
+    private int qtdAtual;
+    private int qtdMinima;
+
+    public Estoque() {
+        this.nome = "";
+        this.qtdAtual = 0;
+        this.qtdMinima = 0;
+    }
+
+    public Estoque(String nome, int qtdAtual, int qtdMinima) {
+        this.nome = nome;
+        this.qtdAtual = qtdAtual;
+        this.qtdMinima = qtdMinima;
+    }
+
+
+    public String getNome() {
+        return nome;  }
+    public void setNome(String nome) {
+        this.nome = nome;  }
+
+    public int getQtdAtual() {
+        return qtdAtual; }
+    public void setQtdAtual(int qtdAtual) {
+        this.qtdAtual = qtdAtual;  }
+
+    public int getQtdMinima() {
+        return qtdMinima; }
+    public void setQtdMinima(int qtdMinima) {
+        this.qtdMinima = qtdMinima; }
+
+    public void baixa(int qtde) {
+        if (qtde >= 0 && qtdAtual - qtde >= 0) {
+            qtdAtual -= qtde;
+        } else {
+            System.out.println("Quantidade inválida ou estoque insuficiente.");
+        }
+    }
+
+    public String mostra() {
+        return "Nome do produto: " + nome + "\nQuantidade Mínima: " + qtdMinima + "\nQuantidade Atual: " + qtdAtual;
+    }
+
+    public boolean repor() {
+        return qtdAtual <= qtdMinima;
+    }
+
+    public static void main(String[] args) {
+        Estoque estoque = new Estoque("Produto A", 50, 10);
+
+        System.out.println("Informações do estoque:");
+        System.out.println(estoque.mostra());
+
+        estoque.baixa(20);
+        System.out.println("\nApós dar baixa de 20 unidades:");
+        System.out.println(estoque.mostra());
+
+        if (estoque.repor()) {
+            System.out.println("\nÉ necessário repor o estoque.");
+        } else {
+            System.out.println("\nNão é necessário repor o estoque.");
+        }
+    }
+}
