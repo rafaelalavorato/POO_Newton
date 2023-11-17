@@ -8,7 +8,7 @@ public class Consulta {
     // b. Buscar um livro cujo vl_preco seja maior ou igual a um valor digitado.
     private final String url = "jdbc:postgresql://localhost/BDlivrariaUniversitaria";
     private final String user = "postgres";
-    private final String password = "b0aofmd0";
+    private final String password = "123456";
 
     private static final String QUERY_TITULO = "select * from livro where nm_titulo like ?";
     private static final String QUERY_VALOR = "select * from livro where vl_preco>=?";
