@@ -74,8 +74,8 @@ public class Questao2 {
             }
         }
 
-        pedido2.alterarStatus(2); // Atualizando status do pedido
-        double totalPagarPedido2 = pedido2.calcularTotalPagar(); // Calculando o total a pagar do pedido 2
+        pedido2.alterarStatus(2); 
+        double totalPagarPedido2 = pedido2.calcularTotalPagar(); 
         System.out.println("Valor total a pagar do segundo pedido é: " + totalPagarPedido2);
         System.out.println("---------------");
 
